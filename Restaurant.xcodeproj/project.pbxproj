@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10F61C6424DB5A80000155BC /* MenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F61C6324DB5A80000155BC /* MenuController.swift */; };
 		10F8ABAA24DA1F19001BF0DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F8ABA924DA1F19001BF0DA /* AppDelegate.swift */; };
 		10F8ABAC24DA1F19001BF0DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10F8ABAB24DA1F19001BF0DA /* SceneDelegate.swift */; };
 		10F8ABB124DA1F19001BF0DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10F8ABAF24DA1F19001BF0DA /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		10F61C6324DB5A80000155BC /* MenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuController.swift; sourceTree = "<group>"; };
 		10F8ABA624DA1F19001BF0DA /* Restaurant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Restaurant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10F8ABA924DA1F19001BF0DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10F8ABAB24DA1F19001BF0DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			children = (
 				10F8ABBD24DA28CC001BF0DA /* CategoryTableViewController.swift */,
 				10F8ABBF24DA28E5001BF0DA /* MenuTableViewController.swift */,
+				10F61C6324DB5A80000155BC /* MenuController.swift */,
 				10F8ABC124DA28FA001BF0DA /* OrderTableViewController.swift */,
 				10F8ABC324DA2A66001BF0DA /* MenuItemDetailViewController.swift */,
 			);
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10F61C6424DB5A80000155BC /* MenuController.swift in Sources */,
 				10F8ABC624DA315B001BF0DA /* MenuItem.swift in Sources */,
 				10F8ABAA24DA1F19001BF0DA /* AppDelegate.swift in Sources */,
 				10F8ABC424DA2A66001BF0DA /* MenuItemDetailViewController.swift in Sources */,
