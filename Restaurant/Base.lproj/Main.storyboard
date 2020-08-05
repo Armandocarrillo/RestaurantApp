@@ -33,7 +33,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="oC4-63-ewu" kind="show" id="kmV-p7-CbI"/>
+                                    <segue destination="oC4-63-ewu" kind="show" identifier="MenuSegue" id="kmV-p7-CbI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
