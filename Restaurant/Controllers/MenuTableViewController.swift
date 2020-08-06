@@ -10,19 +10,26 @@ import UIKit
 
 class MenuTableViewController: UITableViewController {
     var category: String!
-    let menuController = MenuController()
+    //let menuController = MenuController()
     var menuItems = [MenuItem]()
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         title = category.capitalized
-        menuController.fechMenuItems(forCategory: category){
+        MenuController.shared.fechMenuItems(forCategory: category) { (menuItems) in
+            if let menuItems = menuItems{
+                self.updateUI(with: menuItems)
+            }
+        }
+        /*menuController.fechMenuItems(forCategory: category){
             (menuItems) in
             if let menuItems = menuItems {
                 self.updateUI(with: menuItems)
             }
-        }
+        }*/
     }
     
     func updateUI(with menuItems: [MenuItem]) {
@@ -89,14 +96,17 @@ class MenuTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "MenuDetailSegue"{
+            let menuItemDetailViewController = segue.destination as! MenuItemDetailViewController
+            let index = tableView.indexPathForSelectedRow!.row
+            menuItemDetailViewController.menuItem = menuItems[index]
+        }
     }
-    */
+    
 
 }
