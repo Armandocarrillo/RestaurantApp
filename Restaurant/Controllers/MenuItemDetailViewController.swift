@@ -9,15 +9,26 @@
 import UIKit
 
 class MenuItemDetailViewController: UIViewController {
+    
     var menuItem : MenuItem!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var detailLabel: UILabel!
+    @IBOutlet weak var addToOrderButton: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        updateUI()
     }
     
-
+    func updateUI(){
+        titleLabel.text = menuItem.name
+        priceLabel.text = String(format: "$%.2f", menuItem.price)
+        detailLabel.text = menuItem.detailText
+    }
     /*
     // MARK: - Navigation
 
