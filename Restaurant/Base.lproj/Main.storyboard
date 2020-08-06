@@ -138,6 +138,9 @@
                                 <state key="normal" title="Add to Order">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="addToOrderButtonTapped:" destination="ctU-J9-PMI" eventType="touchUpInside" id="nHR-kO-bLR"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

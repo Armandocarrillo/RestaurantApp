@@ -20,8 +20,10 @@ class MenuItemDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        addToOrderButton.layer.cornerRadius = 5.0
         updateUI()
+        
     }
     
     func updateUI(){
@@ -38,5 +40,12 @@ class MenuItemDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func addToOrderButtonTapped(_ sender: UIButton) {
+        //animation of button tapped
+        UIView.animate(withDuration: 0.3) {
+            self.addToOrderButton.transform = CGAffineTransform(scaleX: 3.0, y: 3.0)
+            self.addToOrderButton.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
+        }
+    }
+    
 }
