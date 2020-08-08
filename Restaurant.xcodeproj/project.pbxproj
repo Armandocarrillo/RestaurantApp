@@ -88,8 +88,8 @@
 				10F8ABBD24DA28CC001BF0DA /* CategoryTableViewController.swift */,
 				10F8ABBF24DA28E5001BF0DA /* MenuTableViewController.swift */,
 				10F8ABC324DA2A66001BF0DA /* MenuItemDetailViewController.swift */,
-				10F61C6324DB5A80000155BC /* MenuController.swift */,
 				10F8ABC124DA28FA001BF0DA /* OrderTableViewController.swift */,
+				10F61C6324DB5A80000155BC /* MenuController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
