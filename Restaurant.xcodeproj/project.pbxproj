@@ -77,9 +77,9 @@
 				10F8ABA924DA1F19001BF0DA /* AppDelegate.swift */,
 				10F8ABAB24DA1F19001BF0DA /* SceneDelegate.swift */,
 				10F8ABAF24DA1F19001BF0DA /* Main.storyboard */,
-				10F8ABB224DA1F1A001BF0DA /* Assets.xcassets */,
 				10F8ABB424DA1F1A001BF0DA /* LaunchScreen.storyboard */,
 				10F8ABB724DA1F1A001BF0DA /* Info.plist */,
+				10F8ABB224DA1F1A001BF0DA /* Assets.xcassets */,
 			);
 			path = Restaurant;
 			sourceTree = "<group>";
