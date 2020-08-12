@@ -214,7 +214,9 @@
                             <outlet property="delegate" destination="i1C-k5-SCC" id="DlF-YJ-NIb"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="2El-FE-m8J"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="2El-FE-m8J">
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="R5u-Am-SGr"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88D-40-dUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
