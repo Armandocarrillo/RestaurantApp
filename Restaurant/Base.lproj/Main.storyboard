@@ -218,7 +218,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Root View Controller" id="2El-FE-m8J">
-                        <barButtonItem key="rightBarButtonItem" title="Submit" id="R5u-Am-SGr"/>
+                        <barButtonItem key="rightBarButtonItem" title="Submit" id="R5u-Am-SGr">
+                            <connections>
+                                <action selector="submitTapped:" destination="i1C-k5-SCC" id="oNw-Is-oaQ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="88D-40-dUe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

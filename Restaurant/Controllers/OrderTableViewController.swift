@@ -10,7 +10,7 @@ import UIKit
 
 class OrderTableViewController: UITableViewController {
     
-    
+    var orderMinutes = 0
     var order = Order()
 
     override func viewDidLoad() {
@@ -70,6 +70,17 @@ class OrderTableViewController: UITableViewController {
         
     }
     
+    func uploadOrder(){
+        let menuIds = MenuController.shared.order.menuItems.map { $0.id }
+        MenuController.shared.submitOrder(forMenuIDs: menuIds){
+            (minutes) in
+            DispatchQueue.main.async {
+                if let minutes = minutes{
+                self.performSegue(withIdentifier: "ConfirmationSegue", sender: nil)
+            }
+        }
+    }
+    }
 
     /*
     // Override to support rearranging the table view.
@@ -87,6 +98,8 @@ class OrderTableViewController: UITableViewController {
     */
 
     /*
+     
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -95,5 +108,19 @@ class OrderTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    @IBAction func submitTapped(_ sender: UIBarButtonItem) {
+        let orderTotal = MenuController.shared.order.menuItems.reduce(0.0){
+            (result, menuItem) -> Double in
+            return result + menuItem.price
+        }
+        let formattedOrder = String(format: "$%.2f", orderTotal)
+        
+        let alert = UIAlertController(title: "Confirm Order", message: "You are about to submit your Order with a total of \(formattedOrder)", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Submit", style: .default) { action in self.uploadOrder()
+            
+        })
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
+    }
+    
 }
