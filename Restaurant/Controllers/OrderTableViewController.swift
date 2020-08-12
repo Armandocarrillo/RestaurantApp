@@ -124,6 +124,13 @@ class OrderTableViewController: UITableViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func unwindToOrderList(segue: UIStoryboardSegue){
+        if segue.identifier == "DismissConfirmation"{
+            MenuController.shared.order.menuItems.removeAll()
+        }
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ConfirmSegue"{
             let orderConfirmationViewController = segue.destination as! OrderConfirmationViewController

@@ -237,12 +237,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dY1-SQ-FGf">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dY1-SQ-FGf">
                                 <rect key="frame" x="182" y="449" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Dismiss"/>
                                 <connections>
-                                    <segue destination="gve-7A-KSL" kind="unwind" identifier="DismissConfirmation" unwindAction="unwindToOrderListWithSegue:" id="pgS-N2-Nue"/>
+                                    <segue destination="gve-7A-KSL" kind="unwind" identifier="DismissConfirmation" unwindAction="unwindToOrderListWithSegue:" id="B5i-d8-puB"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kx-4C-2wr">
@@ -256,6 +255,10 @@
                         <constraints>
                             <constraint firstItem="6kx-4C-2wr" firstAttribute="centerY" secondItem="4HB-8n-hyo" secondAttribute="centerY" id="0o4-fV-GfC"/>
                             <constraint firstItem="PfN-RX-2hD" firstAttribute="trailing" secondItem="6kx-4C-2wr" secondAttribute="trailing" id="2Ak-tz-7Dr"/>
+                            <constraint firstItem="dY1-SQ-FGf" firstAttribute="top" secondItem="6kx-4C-2wr" secondAttribute="bottom" constant="17.5" id="2G5-Dl-MzC"/>
+                            <constraint firstItem="dY1-SQ-FGf" firstAttribute="leading" secondItem="PfN-RX-2hD" secondAttribute="leading" constant="182" id="4La-pO-CPA"/>
+                            <constraint firstItem="PfN-RX-2hD" firstAttribute="bottom" secondItem="dY1-SQ-FGf" secondAttribute="bottom" constant="329" id="9Nx-N5-DKj"/>
+                            <constraint firstItem="PfN-RX-2hD" firstAttribute="trailing" secondItem="dY1-SQ-FGf" secondAttribute="trailing" constant="178" id="bf9-eA-nSp"/>
                             <constraint firstItem="6kx-4C-2wr" firstAttribute="leading" secondItem="PfN-RX-2hD" secondAttribute="leading" id="fUK-eH-EzJ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PfN-RX-2hD"/>
