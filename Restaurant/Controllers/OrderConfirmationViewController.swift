@@ -16,7 +16,7 @@ class OrderConfirmationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        timeRemainingLabel.text = "Thank you for your order! Your wait time is approximately \(minutes!) minutes."
     }
     
 

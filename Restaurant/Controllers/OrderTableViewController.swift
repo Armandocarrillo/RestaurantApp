@@ -76,7 +76,8 @@ class OrderTableViewController: UITableViewController {
             (minutes) in
             DispatchQueue.main.async {
                 if let minutes = minutes{
-                self.performSegue(withIdentifier: "ConfirmationSegue", sender: nil)
+                    self.orderMinutes = minutes
+                self.performSegue(withIdentifier: "ConfirmSegue", sender: nil)
             }
         }
     }
@@ -121,6 +122,13 @@ class OrderTableViewController: UITableViewController {
         })
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ConfirmSegue"{
+            let orderConfirmationViewController = segue.destination as! OrderConfirmationViewController
+            orderConfirmationViewController.minutes = orderMinutes
+        }
     }
     
 }
