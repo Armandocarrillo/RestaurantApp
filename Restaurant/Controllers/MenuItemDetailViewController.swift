@@ -10,7 +10,7 @@ import UIKit
 
 class MenuItemDetailViewController: UIViewController {
     
-    var menuItem : MenuItem!
+    var menuItem : MenuItem?
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
@@ -27,6 +27,9 @@ class MenuItemDetailViewController: UIViewController {
     }
     
     func updateUI(){
+        
+        guard let menuItem = menuItem else { return }
+        
         titleLabel.text = menuItem.name
         priceLabel.text = String(format: "$%.2f", menuItem.price)
         detailLabel.text = menuItem.detailText
@@ -38,6 +41,12 @@ class MenuItemDetailViewController: UIViewController {
             }
         }
     }
+    //restore the view controller
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        guard let menuItem = menuItem else { return }
+        coder.encode(menuItem.id, forKey: "menuItemId")
+    }
     /*
     // MARK: - Navigation
 
@@ -48,6 +57,8 @@ class MenuItemDetailViewController: UIViewController {
     }
     */
     @IBAction func addToOrderButtonTapped(_ sender: UIButton) {
+        guard let menuItem = menuItem else { return }
+        
         //animation of button tapped
         UIView.animate(withDuration: 0.3) {
             self.addToOrderButton.transform = CGAffineTransform(scaleX: 3.0, y: 3.0)

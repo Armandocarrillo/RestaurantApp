@@ -10,6 +10,9 @@ import Foundation
 import UIKit
 
 class MenuController {
+  
+    private var itemsByID = [Int:MenuItem]()
+    private var itemsByCategory = [String:[MenuItem]]()
     
     var order = Order() {
         didSet {

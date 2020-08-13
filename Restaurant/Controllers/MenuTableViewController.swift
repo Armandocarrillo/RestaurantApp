@@ -9,17 +9,24 @@
 import UIKit
 
 class MenuTableViewController: UITableViewController {
-    var category: String!
+    var category: String?
     //let menuController = MenuController()
     var menuItems = [MenuItem]()
+   
+    @objc func updateUI(){
+        guard let category = category else { return }
+        title = category.capitalized
+        //self.menuItems = MenuController.shared.items(forCategory: category) ?? []
+        self.tableView.reloadData()
+    }
     
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = category.capitalized
-        MenuController.shared.fechMenuItems(forCategory: category) { (menuItems) in
+        title = category?.capitalized
+        MenuController.shared.fechMenuItems(forCategory: category!) { (menuItems) in
             if let menuItems = menuItems{
                 self.updateUI(with: menuItems)
             }
@@ -107,7 +114,18 @@ class MenuTableViewController: UITableViewController {
         return true
     }
     */
-
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        
+        guard let category = category else { return }
+        coder.encode(category, forKey: "category")
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+        category = coder.decodeObject(forKey: "category") as? String
+        updateUI()
+    }
     
     // MARK: - Navigation
 

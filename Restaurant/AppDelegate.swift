@@ -33,7 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NotificationCenter.default.addObserver(self, selector: #selector(updateOrderBadge), name: MenuController.orderUpdatedNotification, object: nil)
         
         //orderTabBarItem = (self.window!.rootViewController! as! UITabBarController).viewControllers![1].tabBarItem
-        
+        updateOrderBadge()
         
         
         return true
@@ -69,6 +69,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, shouldRestoreApplicationState coder: NSCoder) -> Bool {
         return true
     }
+    
+   
 
 
 }
